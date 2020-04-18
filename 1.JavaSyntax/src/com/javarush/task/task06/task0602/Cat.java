@@ -9,10 +9,15 @@ public class Cat {
 
     }
 
-    //напишите тут ваш код
+    public void finalize(){
+        System.out.println("A Cat was destroyed");
+    }
 
 }
 
 class Dog {
-    //напишите тут ваш код
+
+   public void finalize(){
+       System.out.println("A Dog was destroyed");
+   }
 }
