@@ -1,7 +1,7 @@
-package com.javarush.task.task07.task0710;
+package com.javarush.task.task07.task0711;
 
 /* 
-В начало списка
+Удалить и вставить
 */
 
 import java.io.BufferedReader;
@@ -14,12 +14,17 @@ public class Solution {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         ArrayList<String> list = new ArrayList<>();
 
-        for (int i = 0; i < 10; i++) {
-            list.add(0,bufferedReader.readLine());
+        for (int i = 0; i < 5; i++) {list.add(bufferedReader.readLine());}
+
+        for (int i = 0; i < 13; i++) {
+            String lastString = list.get(list.size() - 1);
+            list.remove(list.size() - 1);
+            list.add(0, lastString);
         }
 
-        for(int i = 0; i < list.size(); i++) {
+        for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
         }
+
     }
 }
