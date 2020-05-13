@@ -21,10 +21,20 @@ public class Solution {
         }
 
         ArrayList<String> resultStrings = new ArrayList<String>();
+
         for (int i = 0; i < strings.size(); i++) {
             String string = strings.get(i);
-            resultStrings.add(string.toUpperCase());
+            if (string.length() % 2 == 0) {
+                String replacement = string + " " + string;
+                strings.set(i, replacement);
+            } else {
+                String replacement = string + " " + string + " " + string;
+                strings.set(i, replacement);
+            }
         }
+
+        resultStrings = strings;
+
 
         for (int i = 0; i < resultStrings.size(); i++) {
             System.out.println(resultStrings.get(i));
